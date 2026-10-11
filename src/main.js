@@ -7,8 +7,9 @@ btnAdd.onclick = () => {
 	let element = document.createElement('div');
 	element.className = 'window';
 	element.innerHTML = `<p></p>`;
-	element.ultiX = 0;		// normal_bounds X
-	element.ultiY = 0;		// normal_bounds Y
+	element.style.left = '100 px';
+	element.style.top = '100 px';
+	
 	element.style.zIndex = zIndex;
 	element.isMaximized = false;
 

@@ -8,8 +8,11 @@ btnAdd.onclick = () => {
 	element.className = 'box';
 	element.innerHTML = `<p>${zIndex}</p>`;
 
-	element.ultiX = 0;		// normal_bounds X
-	element.ultiY = 0;		// normal_bounds Y
+	element.style.left = '100px';
+	element.style.top = '100px';
+
+	// element.ultiX = 0;		// normal_bounds X
+	// element.ultiY = 0;		// normal_bounds Y
 	element.style.zIndex = zIndex;
 	element.isMaximized = false;
 

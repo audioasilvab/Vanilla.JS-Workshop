@@ -14,7 +14,7 @@
     <body>
         <div id="container">
             <div id="desktop">
-                <img id="desktop-img" src="wallpapers/img20.jpg">
+                <!-- <img id="desktop-img" src="wallpapers/img20.jpg"> -->
             </div>
             <div id="dock01">
             	<div id="contd01-0">
@@ -56,18 +56,28 @@
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
         <script src="src/management.js"></script>
         <script src="src/dragging.js"></script>
-        <script src="src/create.js"></script>
         <script src="main.js"></script>
 
         <script>
-            const img = document.getElementById('desktop-img');
-            const dock = document.getElementById('dock01');
+            function onLoadImage() {
+                const dock = document.getElementById('dock01');
+                const img = document.createElement('img');
+                img.src = '/wallpapers/microsoft-windows-11-inspired-colourful-bubble-hd-wallpaper.jpg';
+                img.crossOrigin = "anonymous";
 
+                img.onload = () => {
+                    const color = ColorThief.getPaletteSync(img, 3);
 
-            const color = ColorThief.getColorSync(img);
-            console.log(color.hex());
+                    const color1 = `rgb(${color[0]._r}, ${color[0]._g}, ${color[0]._b})`;
+                    const color2 = `rgb(${color[1]._r}, ${color[1]._g}, ${color[1]._b})`;
+                    const color3 = `rgb(${color[2]._r}, ${color[2]._g}, ${color[2]._b})`;
 
-            dock.style.background = color.hex();
+                    // Aplicar el linear-gradient dinámicamente al contenedor
+                    dock.style.background = `linear-gradient(135deg, ${color1}, ${color2}, ${color3})`;
+                }
+            }
+
+            onLoadImage()
         </script>
     </body>
 </html>
