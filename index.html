@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/ui.css">
+        <script src="https://unpkg.com/colorthief@3/dist/umd/color-thief.global.js"></script>
+
+        <title>gsap-anim</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="desktop">
+                <img id="desktop-img" src="wallpapers/img20.jpg">
+            </div>
+            <div id="dock01">
+            	<div id="contd01-0">
+            		<div id="start">
+						<span id="btn-act">
+							<img src="icons/dots-menu-icon.svg"></img>
+						</span>
+					</div>
+            	</div>
+                <div id="contd01-1">
+                    <div id="container-icon">
+                        <button id="btn-add">+</button>
+                        <div class="icon-app">
+                            <img src="icons/filemanager-app.png" alt="File Manager">
+                            <span>File Manager</span>
+                        </div>
+                        <div class="icon-app" onclick="new WinBox({url: 'index.html'});">
+                            <img src="icons/calculator-app.png" alt="Calculator">
+                            <span>Calculator</span>
+                        </div>
+                        <div class="icon-app">
+                            <img src="icons/calendar-app.png" alt="Calendar">
+                            <span>Calendar</span>
+                        </div>
+                        <div class="icon-app">
+                            <img src="icons/camera-app.png" alt="Camera">
+                            <span>Camera</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="contd01-2">
+                    <div id="container-state">
+                        <div class="hours">12:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+        <script src="src/management.js"></script>
+        <script src="src/dragging.js"></script>
+        <script src="src/create.js"></script>
+        <script src="main.js"></script>
+
+        <script>
+            const img = document.getElementById('desktop-img');
+            const dock = document.getElementById('dock01');
+
+
+            const color = ColorThief.getColorSync(img);
+            console.log(color.hex());
+
+            dock.style.background = color.hex();
+        </script>
+    </body>
+</html>

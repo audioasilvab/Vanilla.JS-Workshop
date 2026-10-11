@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('../wallpapers/aluminium-os-stock-3636x3636-26364.jpeg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	user-select: none;
+}
+
+#container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	//background: #ffffff1a;
+	width: 100vw;
+	height: 100vh;
+}
+
+.box {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #00f;
+	width: 240px;
+	height: 120px;
+	border-radius: 5px;
+	border: solid 3px #fff;
+}
+
+.box p {
+	color: #fff;
+}
+
+#desktop {
+	position: relative;
+	flex: 1;
+	overflow: hidden;
+}
+
+#controls {
+	display: flex;
+	width: 100vw;
+	padding: 10px;
+	bottom: 0px;
+	gap: 10px;
+	background: #fafafa;
+}
+
+#controls button {
+	padding: 10px;
+}

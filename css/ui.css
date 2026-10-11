@@ -1,0 +1,192 @@
+/* Fondo de pantalla completa */
+/*#container-wallpaper {
+	background-image: url('wallpapers/aluminium-os-stock-3636x3636-26364.jpeg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	//z-index: 1;
+}*/
+
+/* Barra superior (Estilo GNOME) */
+#dock01 {
+	--w: 0px;
+  --b: 20px;
+  --img: url('../wallpapers/aluminium-os-stock-3636x3636-26364.jpeg');
+	display: flex;
+	bottom: 0px;
+	position: relative;
+	padding: 10px 0px;
+	left: 0;
+	//margin: 10px;
+	width: calc(100% - 0px);
+	//border-radius: 20px;
+	//height: 32px; /* Altura controlada fija */
+	gap: 12px;
+	justify-content: space-between;
+	align-items: center;
+	/* Fondo oscuro translúcido para que funcione el blur */
+	//background-color: rgb(30, 30, 30); 
+	/*backdrop-filter: blur(66px);
+	-webkit-backdrop-filter: blur(12px);*/
+	/*border-top: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);*/
+	//z-index: 1000;
+	overflow: hidden;
+	//backdrop-filter: blur(20px);
+}
+
+#contd01-0 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 12px;
+}
+
+#contd01-1 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 12px;
+}
+
+#contd01-2 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 0 12px;
+}
+
+#container-icon, #start {
+	display: flex;
+	gap: 14px;
+	align-items: center;
+}
+
+/* Aplicaciones abiertas en barra superior */
+.icon-app {
+	display: flex;
+	padding: 5px;
+	height: 100%;
+	gap: 6px;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	font-size: 13px;
+	background-color: #444;
+	cursor: pointer;
+	border-radius: 10%;
+	transition: transform 0.1s ease;
+}
+
+.icon-app span {
+	display: none;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100px; /* Evita que nombres largos rompan la barra */
+	overflow: hidden;
+}
+
+.icon-app:hover {
+	transform: scale(1.05);
+}
+
+.icon-app:active {
+	transform: scale(0.90);
+}
+
+.icon-app img {
+	height: 24px;
+	width: 24px;
+	object-fit: contain;
+}
+
+/* Botón de actividades */
+#btn-act {
+	//padding: 2px 12px;
+	border-radius: 10px;
+	color: #fff;
+	display: flex;
+	font-size: 13px;
+	font-weight: 500;
+	//background-color: rgba(255, 255, 255, 0.15);
+	cursor: pointer;
+	transition: background-color 0.2s, transform 0.1s;
+}
+
+#btn-act:hover {
+	//background-color: rgba(255, 255, 255, 0.25);
+}
+
+#btn-act:active {
+	transform: scale(0.95);
+}
+
+#btn-act img {
+	width: 24px;
+	height: 24px;
+}
+
+.hours {
+	color: white;
+	font-size: 13px;
+}
+
+/* Dock Inferior Flotante */
+#dock02 {
+	display: flex; /*flex*/;
+	position: fixed;
+	bottom: 12px; /* Flota ligeramente despegado del borde inferior */
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 14px;
+	gap: 12px;
+	align-items: center;
+	/* Gris oscuro translúcido */
+	background-color: rgba(24, 24, 24, 0.75); 
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-radius: 20px; /* Bordes más curvos tipo GNOME moderno */
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	//z-index: 1000;
+	transition: transform 0.3s ease, bottom 0.3s ease;
+}
+
+#separator {
+	width: 1px;
+	height: 32px; /* Altura definida para alinearse con los iconos */
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+#contd02-1, #contd02-2 {
+	display: flex;
+	gap: 12px;
+}
+
+/* Iconos del Dock */
+.i-dock {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación elástica más fluida */
+}
+
+.i-dock img {
+	width: 46px;
+	height: 46px;
+	object-fit: contain;
+}
+
+.i-dock:hover {
+	transform: scale(1) translateY(0px); /* Se agranda y sube sutilmente */
+}
+
+.i-dock:active {
+	transform: scale(0.9);
+}
